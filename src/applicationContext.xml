@@ -16,7 +16,7 @@
 		<property name="printedLoggerLevel" value="FINEST" />
 	</bean>
 
-	<bean id="myCoach" class="com.luv2code.springdemo.BaseballCoach">
+	<bean id="myCoach" class="com.luv2code.springdemo.TriathlonCoach">
 	</bean>
 
 </beans>
