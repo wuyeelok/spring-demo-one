@@ -42,6 +42,19 @@
 		<property name="team" value="${foo.team}" />
 	</bean>
 
-
+	<!-- Set up exercise fortune service -->
+	<bean id="birthdayFortuneService"
+		class="com.luv2code.springdemo.BirthdayFortuneService">
+	</bean>
+	
+	<!-- Define myCoach2 -->
+	<bean id="myCoach2" class="com.luv2code.springdemo.BaseballCoach">
+	
+		<!-- Set up constructor injection -->
+		<constructor-arg ref="birthdayFortuneService" />
+		
+		<!-- set up setter injection -->
+		<property name="fortuneService" ref="birthdayFortuneService" />
+	</bean>
 
 </beans>

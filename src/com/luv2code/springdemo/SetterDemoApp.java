@@ -6,17 +6,19 @@ public class SetterDemoApp {
 
 	public static void main(String[] args) {
 
-		// Load the srping configuration file
+		// Load the spring configuration file
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		// Retrieve bean from spring container
-		CricketCoach theCoach = context.getBean("myCricketCoach", CricketCoach.class);
+		Coach theCoach = context.getBean("myCoach2", Coach.class);
 
 		// Call methods on the bean
 		System.out.println(theCoach.getDailyWorkout());
 		System.out.println(theCoach.getDailyFortune());
-		System.out.println(theCoach.getEmailAddress());
-		System.out.println(theCoach.getTeam());
+		/*
+		 * System.out.println(theCoach.getEmailAddress());
+		 * System.out.println(theCoach.getTeam());
+		 */
 
 		// Close the context
 		context.close();
