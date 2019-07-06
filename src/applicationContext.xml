@@ -16,9 +16,9 @@
 		<property name="printedLoggerLevel" value="FINEST" />
 	</bean>
 
-	<!-- Load the properties file: sport.properties -->
+	<!-- Load the properties file: sport.properties, birthday.properties -->
 	<context:property-placeholder
-		location="classpath:sport.properties" />
+		location="classpath:sport.properties,classpath:birthday.properties" />
 
 	<!-- Define the dependency -->
 	<bean id="myFortuneService"
@@ -45,14 +45,18 @@
 	<!-- Set up exercise fortune service -->
 	<bean id="birthdayFortuneService"
 		class="com.luv2code.springdemo.BirthdayFortuneService">
+
+		<!-- Inject literal values -->
+		<property name="birthdayFortunes"
+			value="${birthday.fortune.list}" />
 	</bean>
-	
+
 	<!-- Define myCoach2 -->
 	<bean id="myCoach2" class="com.luv2code.springdemo.BaseballCoach">
-	
+
 		<!-- Set up constructor injection -->
 		<constructor-arg ref="birthdayFortuneService" />
-		
+
 		<!-- set up setter injection -->
 		<property name="fortuneService" ref="birthdayFortuneService" />
 	</bean>
