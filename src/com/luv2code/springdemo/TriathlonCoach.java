@@ -5,6 +5,7 @@ public class TriathlonCoach implements Coach {
 	private FortuneService fortuneService;
 
 	public TriathlonCoach(FortuneService fortuneService) {
+		System.out.println("Inside TriathlonCoach Constructor arg method.");
 		this.fortuneService = fortuneService;
 	}
 
