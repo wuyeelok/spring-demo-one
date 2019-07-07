@@ -28,4 +28,11 @@
 		<constructor-arg ref="myFortuneService" />
 	</bean>
 
+	<bean id="myTriCoach"
+		class="com.luv2code.springdemo.TriathlonCoach" scope="prototype">
+
+		<!-- Set up constructor injection -->
+		<constructor-arg ref="myFortuneService" />
+	</bean>
+
 </beans>
