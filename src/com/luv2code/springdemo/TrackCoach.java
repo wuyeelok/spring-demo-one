@@ -5,10 +5,11 @@ public class TrackCoach implements Coach {
 	private FortuneService fortuneService;
 
 	public TrackCoach() {
-
+		System.out.println("Insede TrackCoach no-arg constructor.");
 	}
 
 	public TrackCoach(FortuneService fortuneService) {
+		System.out.println("Insede TrackCoach arg FortuneService constructor.");
 		this.fortuneService = fortuneService;
 	}
 
@@ -20,6 +21,16 @@ public class TrackCoach implements Coach {
 	@Override
 	public String getDailyFortune() {
 		return "Just DO It: " + this.fortuneService.getFortune();
+	}
+
+	// add an init method
+	public void doMyStartupStuff() {
+		System.out.println("TrackCoach: inside method doMyStartupStuff.");
+	}
+
+	// add a destory method
+	public void doMyCleanupStuffYoYo() {
+		System.out.println("TrackCoach: inside method doMyCleanupStuffYoYo.");
 	}
 
 }
