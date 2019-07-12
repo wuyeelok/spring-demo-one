@@ -17,10 +17,10 @@ public class TennisCoach implements Coach {
 	 * this.fortuneService = fortuneService; }
 	 */
 
-	// define a setter method
+	// define a method with any name
 	@Autowired
-	public void setFortuneService(FortuneService fortuneService) {
-		System.out.println(">> Tenniscoach: inside setFortuneService() method");
+	public void doSomeCrazyStuff(FortuneService fortuneService) {
+		System.out.println(">> Tenniscoach: inside doSomeCrazyStuff() method");
 		this.fortuneService = fortuneService;
 	}
 
