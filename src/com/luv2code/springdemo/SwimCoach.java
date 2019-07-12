@@ -10,4 +10,10 @@ public class SwimCoach implements Coach {
 		return "Practice kicking for 400m";
 	}
 
+	@Override
+	public String getDailyFortune() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
