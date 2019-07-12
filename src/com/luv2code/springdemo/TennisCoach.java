@@ -6,17 +6,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoach implements Coach {
 
-	@Autowired
-	private FortuneService fortuneService;
-
-	public TennisCoach() {
-		System.out.println(">> Tenniscoach: inside default constructor");
-	}
+	private final FortuneService fortuneService;
 
 	/*
-	 * @Autowired public TennisCoach(FortuneService fortuneService) {
-	 * this.fortuneService = fortuneService; }
+	 * public TennisCoach() {
+	 * System.out.println(">> Tenniscoach: inside default constructor"); }
 	 */
+
+	@Autowired
+	public TennisCoach(FortuneService fortuneService) {
+		System.out.println(">> Tenniscoach: inside constructor arg:fortuneService");
+		this.fortuneService = fortuneService;
+	}
 
 	/*
 	 * @Autowired public void doSomeCrazyStuff(FortuneService fortuneService) {
