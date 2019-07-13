@@ -2,6 +2,7 @@ package com.luv2code.springdemo;
 
 import java.util.Random;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component("randomFromFile")
@@ -11,8 +12,8 @@ public class RandomFileFortuneService implements FortuneService {
 
 	private final Random myRandom;
 
-	public RandomFileFortuneService() {
-		this.data = new String[] { "random from file: abc" };
+	public RandomFileFortuneService(@Value("${fortunelist}") String fortunes) {
+		this.data = fortunes.split(",");
 		this.myRandom = new Random();
 	}
 
