@@ -17,4 +17,9 @@ public class SportConfig {
 	public Coach swimCoach() {
 		return new SwimCoach(sadFortuneService());
 	}
+
+	@Bean
+	public String passCode() {
+		return "Open Sesame";
+	}
 }

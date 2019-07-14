@@ -18,6 +18,9 @@ public class SwimJavaConfigDemoApp {
 		// Call method to get daily fortune
 		System.out.println(theCoach.getDailyFortune());
 
+		String code = context.getBean("passCode", String.class);
+		System.out.println(code);
+
 		// Close the context
 		context.close();
 	}
