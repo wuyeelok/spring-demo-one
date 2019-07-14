@@ -1,19 +1,17 @@
 package com.luv2code.springdemo;
 
-import org.springframework.beans.factory.annotation.Value;
-
 public class SwimCoach implements Coach {
 
 	private final FortuneService fortuneService;
 
-	@Value("${foo.email}")
-	private String email;
+	private final String email;
 
-	@Value("${foo.team}")
-	private String team;
+	private final String team;
 
-	public SwimCoach(FortuneService fortuneService) {
+	public SwimCoach(FortuneService fortuneService, String email, String team) {
 		this.fortuneService = fortuneService;
+		this.email = email;
+		this.team = team;
 	}
 
 	@Override
