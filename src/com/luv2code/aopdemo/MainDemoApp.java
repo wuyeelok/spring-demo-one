@@ -17,6 +17,21 @@ public class MainDemoApp {
 		// Call the business method
 		theAccountDAO.addAccount();
 
+		// Doing it again!
+		System.out.println("\nLet's call it again!\n");
+
+		// Call the business method again
+		theAccountDAO.addAccount();
+
+		// Try another bean!
+		System.out.println("\nTry another bean!\n");
+
+		// Get different bean from spring container
+		AccountDAO nextAccountDAO = context.getBean("DumpDAO", AccountDAO.class);
+
+		// Call the business method
+		nextAccountDAO.addAccount();
+
 		// Close the context
 		context.close();
 
