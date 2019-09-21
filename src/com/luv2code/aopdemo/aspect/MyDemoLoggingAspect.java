@@ -12,6 +12,13 @@ public class MyDemoLoggingAspect {
 
 	// Let's start with an @Before advice
 
+	@Before("execution(public void add*())")
+	public void beforeAddWildAdvice() {
+	
+		System.out.println("\n====>>> Executing @Before advice on wild method add*()");
+	
+	}
+
 	@Before("execution(public void com.luv2code.aopdemo.dao.AccountDAOImpl.addAccount())")
 	public void beforeAddAccountImplAdvice() {
 
