@@ -14,9 +14,9 @@ public class MyDemoLoggingAspect {
 
 	@Before("execution(public void add*())")
 	public void beforeAddWildAdvice() {
-	
+
 		System.out.println("\n====>>> Executing @Before advice on wild method add*()");
-	
+
 	}
 
 	@Before("execution(public void com.luv2code.aopdemo.dao.AccountDAOImpl.addAccount())")
@@ -30,6 +30,20 @@ public class MyDemoLoggingAspect {
 	public void beforeAddAccountAdvice() {
 
 		System.out.println("\n====>>> Executing @Before advice on interface AccountDAO addAccount()");
+
+	}
+
+	@Before("execution(void add*())")
+	public void beforeAnyVoidAddWildAdvice() {
+
+		System.out.println("\n====>>> Executing @Before advice on any modifier void return method add*()");
+
+	}
+
+	@Before("execution(* add*())")
+	public void beforeAnyWildAddWildAdvice() {
+
+		System.out.println("\n====>>> Executing @Before advice on any modifier wild return wild method add*()");
 
 	}
 
