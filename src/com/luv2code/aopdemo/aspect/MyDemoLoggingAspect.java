@@ -15,7 +15,14 @@ public class MyDemoLoggingAspect {
 	@Before("execution(public void com.luv2code.aopdemo.dao.AccountDAO.addAccount())")
 	public void beforeAddAccountAdvice() {
 
-		System.out.println("\n====>>> Executing @Before advice on addAccount()");
+		System.out.println("\n====>>> Executing @Before advice on interface AccountDAO addAccount()");
+
+	}
+
+	@Before("execution(public void com.luv2code.aopdemo.dao.AccountDAOImpl.addAccount())")
+	public void beforeAddAccountImplAdvice() {
+
+		System.out.println("\n====>>> Executing @Before advice on class AccountDAOImpl addAccount()");
 
 	}
 
