@@ -20,11 +20,14 @@ public class MainDemoApp {
 		MembershipDAO theMembershipDAO = context.getBean("membershipDAOImpl", MembershipDAO.class);
 
 		// Call the Account DAO method
-		theAccountDAO.addAccount();
-		nextAccountDAO.addAccount();
+		Account myAccount = new Account();
+		theAccountDAO.addAccount(myAccount);
+		nextAccountDAO.addAccount(myAccount);
 
 		// Call the membership business method
 		theMembershipDAO.addSillyMember();
+		
+		theAccountDAO.changeName("abc");
 
 		// Close the context
 		context.close();
